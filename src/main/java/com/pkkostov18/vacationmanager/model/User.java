@@ -1,4 +1,4 @@
-package com.pkkostov18.vacationmanager;
+package com.pkkostov18.vacationmanager.model;
 
 public class User {
 
