@@ -1,12 +1,27 @@
 package com.pkkostov18.vacationmanager.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
+    private int id;
+    @Column
     private String nickname;
+    @Column
     private String password;
+    @Column
     private String firstName;
+    @Column
     private String lastName;
+    @Column
     private String role;
+    @Column
     private String team;
     public User(String nickname, String password, String firstName, String lastName, String role, String team) {
         this.nickname = nickname;
@@ -15,6 +30,10 @@ public class User {
         this.lastName = lastName;
         this.role = role;
         this.team = team;
+    }
+
+    public User() {
+
     }
 
     public String getNickname() {

@@ -1,5 +1,111 @@
-h2 { color: blue }
+h2 {
+    color: white;
+    font-size: 50px;
+    font-family: Consolas;
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
 
 body {
-    background-image: url("https://i2-prod.mirror.co.uk/incoming/article27808366.ece/ALTERNATES/s1200c/1_Emory-Andrew-Tate-III-Instagram-picture.jpg");
+    background: url("https://media.istockphoto.com/id/1339787499/photo/empty-dark-blue-studio-room-with-light-and-shadow-abstract-background-copy-space-studio-room.jpg?b=1&s=170667a&w=0&k=20&c=sEYFpHbrxOugC-NlO4vh1AQurJAsR-RnLbg_KHgj3kM=") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 900px) {
+    .login-button {
+        margin-bottom: 25px;
+    }
+
+    .register-button {
+        margin-top: 25px;
+    }
+}
+
+.login-button {
+    margin-right: 20px;
+}
+
+.register-button {
+    margin-left: 20px;
+}
+
+.login-button, .register-button {
+   align-items: center;
+   appearance: none;
+   background-color: #fff;
+   border-radius: 24px;
+   border-style: none;
+   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+   box-sizing: border-box;
+   color: #3c4043;
+   cursor: pointer;
+   display: inline-flex;
+   fill: currentcolor;
+   font-family: "Google Sans",Roboto,Arial,sans-serif;
+   font-size: 25px;
+   font-weight: 500;
+   height: 150px;
+   justify-content: center;
+   letter-spacing: .25px;
+   line-height: normal;
+   max-width: 100%;
+   overflow: visible;
+   padding: 2px 50px;
+   position: relative;
+   text-align: center;
+   text-transform: none;
+   transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   width: auto;
+   will-change: transform,opacity;
+   z-index: 0;
+}
+
+.login-button:hover, .register-button:hover {
+    background: #F6F9FE;
+    color: #174ea6;
+}
+
+.login-button:active, register-button:active {
+    box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+    outline: none;
+}
+
+.login-button:focus, register-button:focus {
+    outline: none;
+    border: 2px solid #4285f4;
+}
+
+.login-button:not(:disabled),  register-button:not(:disabled){
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.login-button:not(:disabled):hover,  register-button:not(:disabled):hover{
+    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.login-button:not(:disabled):focus,  register-button:not(:disabled):focus{
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.login-button:not(:disabled):active,  register-button:not(:disabled):active{
+    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.login-button:disabled,  register-button:disabled{
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
