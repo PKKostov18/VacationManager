@@ -1,11 +1,9 @@
 package com.pkkostov18.vacationmanager.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="Users")
 public class User {
 
     @Id
@@ -21,19 +19,34 @@ public class User {
     private String lastName;
     @Column
     private String role;
-    @Column
-    private String team;
-    public User(String nickname, String password, String firstName, String lastName, String role, String team) {
+
+    public User(int id, String nickname, String password, String firstName, String lastName, String role) {
+        this.id = id;
         this.nickname = nickname;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
-        this.team = team;
+    }
+
+    public User(String nickname, String password, String firstName, String lastName, String role) {
+        this.nickname = nickname;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.role = role;
     }
 
     public User() {
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNickname() {
@@ -76,23 +89,15 @@ public class User {
         this.role = role;
     }
 
-    public String getTeam() {
-        return team;
-    }
-
-    public void setTeam(String team) {
-        this.team = team;
-    }
-
     @Override
     public String toString() {
-        return "Users{" +
-                "nickname='" + nickname + '\'' +
+        return "User{" +
+                "id=" + id +
+                ", nickname='" + nickname + '\'' +
                 ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", role='" + role + '\'' +
-                ", team='" + team + '\'' +
                 '}';
     }
 }
