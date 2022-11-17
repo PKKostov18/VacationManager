@@ -3,7 +3,7 @@ package com.pkkostov18.vacationmanager.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Users")
+@Table(name="Usersss")
 public class User {
 
     @Id
@@ -15,7 +15,7 @@ public class User {
     private String password;
     @Column
     private String firstName;
-       @Column
+    @Column
     private String lastName;
     @Column
     private String role;
