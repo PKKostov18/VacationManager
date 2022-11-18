@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vacation Manager</title>
+    <link href="css/register.css" rel="stylesheet" type="text/css">
+    <script src="js/register.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <center><h2 class="register-heading">REGISTER</h2></center>
+
+    <form action="/register" method="post">
+        <label for="firstName" style="display: block;">
+            <p class="label-txt">ENTER YOUR FIRST NAME</p>
+            <input id="firstName" name="firstName" type="text" class="input" style="color: white" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label for="lastName" style="display: block;">
+            <p class="label-txt">ENTER YOUR LAST NAME</p>
+            <input id="lastName" name="lastName" type="text" class="input" style="color: white" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label for="nickname" style="display: block;">
+            <p class="label-txt">ENTER YOUR NICKNAME</p>
+            <input id="nickname" name="nickname" type="text" class="input" style="color: white" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label for="password" style="display: block;">
+            <p class="label-txt">ENTER YOUR PASSWORD</p>
+            <input id="password" name="password" type="text" class="input" style="color: white" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label for="role" style="display: block;">
+            <p class="label-txt">SELECT YOUR ROLE</p>
+            <select id="role" name="role" class="input" style="color: white" required>
+                <option value="hide" style="color: black" selected></option>
+                <option style="color: black"> Developer</option>
+                <option style="color: black"> Unassigned</option>
+            </select>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <button type="submit">submit</button>
+    </form>
+
+</body>
+</html>

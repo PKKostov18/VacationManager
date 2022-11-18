@@ -5,3 +5,9 @@ body {
     -o-background-size: cover;
     background-size: cover;
 }
+
+.login-heading {
+    color: white;
+    font-size: 50px;
+    font-family: Consolas;
+}

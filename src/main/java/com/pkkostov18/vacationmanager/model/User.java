@@ -3,7 +3,7 @@ package com.pkkostov18.vacationmanager.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Usersss")
+@Table(name="Users")
 public class User {
 
     @Id
