@@ -14,20 +14,23 @@ public class UserController {
     UserRepository userRepo;
 
     @GetMapping("/")
-    public String index() {
-
+    public String indexPage() {
         return "index";
     }
 
     @GetMapping("/register")
-    public String register() {
-
+    public String registerPage() {
         return "register";
     }
 
     @GetMapping("/login")
-    public String getAllUsers() {
-       return "login";
+    public String loginPage() {
+        return "login";
+    }
+
+    @GetMapping("/welcome")
+    public String welcomePage() {
+        return "welcome";
     }
 
     @PostMapping("/register")
@@ -36,5 +39,4 @@ public class UserController {
         model.addAttribute("getRegisteredUser", registeredUser);
         return "welcome";
     }
-
 }
