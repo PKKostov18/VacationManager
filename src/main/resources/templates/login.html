@@ -4,11 +4,32 @@
     <meta charset="UTF-8">
     <title>Vacation Manager</title>
     <link href="css/login.css" rel="stylesheet" type="text/css">
+    <script src="js/login.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
     <center><h2 class="login-heading">LOGIN</h2></center>
 
+    <form action="/login" method="get">
+        <label for="nickname" style="display: block;">
+            <p class="label-txt">ENTER YOUR NICKNAME</p>
+            <input id="nickname" name="nickname" type="text" class="input" style="color: white" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label for="password" style="display: block;">
+            <p class="label-txt">ENTER YOUR PASSWORD</p>
+            <input id="password" name="password" type="text" class="input" style="color: white" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <button type="login">login</button>
+    </form>
 
 
 </body>
