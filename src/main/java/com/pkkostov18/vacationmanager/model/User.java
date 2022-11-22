@@ -8,7 +8,7 @@ public class User {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int userId;
     @Column
     private String nickname;
     @Column
@@ -21,7 +21,7 @@ public class User {
     private String role;
 
     public User(int id, String nickname, String password, String firstName, String lastName, String role) {
-        this.id = id;
+        this.userId = id;
         this.nickname = nickname;
         this.password = password;
         this.firstName = firstName;
@@ -41,12 +41,12 @@ public class User {
 
     }
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int id) {
+        this.userId = id;
     }
 
     public String getNickname() {
@@ -92,7 +92,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                "id=" + userId +
                 ", nickname='" + nickname + '\'' +
                 ", password='" + password + '\'' +
                 ", firstName='" + firstName + '\'' +
