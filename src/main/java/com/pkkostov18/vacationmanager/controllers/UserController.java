@@ -3,12 +3,9 @@ package com.pkkostov18.vacationmanager.controllers;
 import com.pkkostov18.vacationmanager.dao.UserRepository;
 import com.pkkostov18.vacationmanager.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 public class UserController {
@@ -31,6 +28,11 @@ public class UserController {
         return "register";
     }
 
+    @GetMapping("/logout")
+    public String logOut() {
+        return "index";
+    }
+
     @PostMapping("/register")
     public String addUser(@ModelAttribute User user) {
         userRepo.save(user);
@@ -48,6 +50,10 @@ public class UserController {
         else if(loggedUser.getRole().contains("Developer")) {
             return "developerPage";
         }
-        return "welcome";
+        else if(loggedUser.getRole().contains("Team Leader")) {
+            return "teamLeaderPage";
+        }
+
+        return "unassignedPage";
     }
 }

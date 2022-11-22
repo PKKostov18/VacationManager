@@ -1,0 +1,13 @@
+h1 {
+    color: white;
+    font-size: 50px;
+    font-family: Consolas;
+}
+
+body {
+    background: url("https://wallpaper.dog/large/20395928.gif") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
