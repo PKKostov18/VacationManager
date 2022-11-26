@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vacation Manager</title>
+    <link href="css/createTeam.css" rel="stylesheet" type="text/css">
+    <script src="js/register.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <center>
+    <h2 class="heading">CREATE A TEAM</h2>
+  </center>
+
+  <form action="/createTeam" method="post">
+    <label for="teamName" style="display: block;">
+      <p class="label-txt">ENTER TEAM NAME</p>
+      <input id="teamName" name="teamName" type="text" class="input" style="color: white" required>
+      <div class="line-box">
+        <div class="line"></div>
+      </div>
+    </label>
+    <button type="submit">create</button>
+  </form>
+
+</body>
+</html>

@@ -8,30 +8,18 @@
 <body>
 
     <div class="navbar">
-        <form action="goToVacationRequestsPage" class="button3">
-            <button class="btn">Vacation requests</button>
+        <form action="goToCreateTeamPage" class="button3">
+            <button class="btn">Create a team</button>
         </form>
-        <div class="dropdown">
-            <button class="dropbtn">View Information</button>
-            <div class="dropdown-content">
-                <form action="goToTeamsInfoPage" class="button1">
-                    <button class="btn1">Teams</button>
-                </form>
 
-                <form action="goToUsersInfoPage" class="button1">
-                    <button class="btn1">Users</button>
-                </form>
+        <form action="goToVacationRequestsPage" class="button3">
+            <button class="btn">Join a team</button>
+        </form>
 
-                <form action="goToProjectsInfoPage" class="button1">
-                    <button class="btn1">Projects</button>
-                </form>
-            </div>
-        </div>
-        <form action="logout" method="get" class="button">
+        <form action="logout" class="button">
             <button class="btn">LOG OUT</button>
         </form>
     </div>
-
 
     <center><h1 th:text="${getLoggedUser.nickname}"></h1></center>
 

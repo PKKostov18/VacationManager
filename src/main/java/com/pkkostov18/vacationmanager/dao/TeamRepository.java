@@ -1,7 +1,9 @@
 package com.pkkostov18.vacationmanager.dao;
 
-import com.pkkostov18.vacationmanager.model.User;
+import com.pkkostov18.vacationmanager.model.Team;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TeamRepository extends JpaRepository<User, String> {
+public interface TeamRepository extends JpaRepository<Team, Integer> {
+
+
 }

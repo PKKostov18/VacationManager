@@ -3,6 +3,7 @@ package com.pkkostov18.vacationmanager.controllers;
 import com.pkkostov18.vacationmanager.dao.UserRepository;
 import com.pkkostov18.vacationmanager.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +14,14 @@ public class UserController {
     @Autowired
     UserRepository userRepo;
     User loggedUser;
+
+    private static UserController userController;
+    public static UserController getInstance() {
+        if (userController == null) {
+            userController = new  UserController();
+        }
+        return userController;
+    }
 
     @GetMapping("/")
     public String indexPage() {
@@ -38,6 +47,7 @@ public class UserController {
     public String vacationRequestsPage() {
         return "vacationRequests";
     }
+
 
     @GetMapping("/logout")
     public String logOut() {

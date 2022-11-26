@@ -1,5 +1,7 @@
 package com.pkkostov18.vacationmanager.model;
 
+import com.pkkostov18.vacationmanager.controllers.UserController;
+
 import javax.persistence.*;
 
 @Entity
