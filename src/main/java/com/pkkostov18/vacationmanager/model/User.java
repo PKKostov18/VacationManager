@@ -1,5 +1,8 @@
 package com.pkkostov18.vacationmanager.model;
 
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.springframework.boot.context.properties.bind.DefaultValue;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,7 +21,7 @@ public class User {
     @Column
     private String lastName;
     @Column
-    private String role;
+    private String role = "Unassigned";
 
     public User(int id, String nickname, String password, String firstName, String lastName, String role) {
         this.userId = id;

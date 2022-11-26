@@ -12,6 +12,7 @@ public class UserController {
 
     @Autowired
     UserRepository userRepo;
+    User loggedUser;
 
     @GetMapping("/")
     public String indexPage() {
@@ -28,8 +29,19 @@ public class UserController {
         return "register";
     }
 
+    @GetMapping("/goToUsersInfoPage")
+    public String usersInfoPage() {
+        return "usersInfo";
+    }
+
+    @GetMapping("/goToVacationRequestsPage")
+    public String vacationRequestsPage() {
+        return "vacationRequests";
+    }
+
     @GetMapping("/logout")
     public String logOut() {
+        loggedUser = null;
         return "index";
     }
 
@@ -41,7 +53,7 @@ public class UserController {
 
     @GetMapping(value="/login")
     public String getUserByUsernameAndPassword(@ModelAttribute User user, Model model) {
-        User loggedUser = userRepo.findByNicknameAndPassword(user.getNickname(), user.getPassword());
+        loggedUser = userRepo.findByNicknameAndPassword(user.getNickname(), user.getPassword());
         model.addAttribute("getLoggedUser", loggedUser);
 
         if(loggedUser.getRole().contains("CEO")) {

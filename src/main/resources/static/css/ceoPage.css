@@ -4,6 +4,21 @@ h1 {
     font-family: Consolas;
 }
 
+h3 {
+    color: #ff0000;
+    font-size: 25px;
+    font-family: Consolas;
+}
+
+.profileInfo {
+    color: white;
+    font-size: 25px;
+    font-family: Consolas;
+    position: absolute;
+    left: 20%;
+    display: inline-block;
+}
+
 body {
     background: url("https://wallpaper.dog/large/20395928.gif") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -12,16 +27,130 @@ body {
     background-size: cover;
 }
 
-@media screen and (min-width:900px){
-    .nav-link {
-        padding:18px 0;
-        min-width:120px;
-    }
-    .navbar {
-        padding: 0
-    }
+.navbar {
+    overflow: hidden;
+}
+
+.navbar a{
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.button {
+    float: right;
+    overflow: hidden;
+    display: block;
+}
+
+.button3 {
+    float: left;
+    overflow: hidden;
+    display: block;
+}
+
+.button3 .btn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.button3:hover .btn {
+    background-color: red;
+}
+
+.button .btn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.button:hover .btn {
+    background-color: red;
+}
+
+.button1 {
+    float: right;
+    overflow: hidden;
+    display: block;
+}
+
+.button1 .btn1 {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #000000;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.button1:hover .btn1 {
+    background-color: red;
+    color: white;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a{
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+
+
+.dropdown-content a:hover{
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 #logoutButton {
-    color: black;
+    float: right;
 }
