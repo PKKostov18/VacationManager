@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Vacation Manager</title>
+    <link href="css/joinTeam.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <div class="navbar">
+        <form action="/unassignedPage" class="button3">
+            <button class="btn">Home</button>
+        </form>
+
+        <form action="/goToCreateTeamPage" class="button3">
+            <button class="btn">Create a team</button>
+        </form>
+
+        <form action="/logout" class="button">
+            <button class="btn">LOG OUT</button>
+        </form>
+    </div>`
+
+    <br>
+    <br>
+    <br>
+
+    <center><h1>Join a team</h1></center>
+
+    <table style="width:100%">
+        <tr>
+            <th>Team name</th>
+            <th>Join</th>
+        </tr>
+
+        <tr th:each="team : ${teams}" class="table-items">
+            <td th:text="${team.getTeam().teamName}" style="font-size: 30px"></td>
+            <td>
+                <form action="/joinTeam" class="join-button">
+                    <button class="join-btn">JOIN</button>
+                </form>
+            </td>
+        </tr>
+
+    </table>
+
+</body>
+</html>

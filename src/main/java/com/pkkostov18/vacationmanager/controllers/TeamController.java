@@ -38,16 +38,14 @@ public class TeamController{
         return "createTeam";
     }
 
-    @PostMapping("/createTeam")
-    public String createTeam(@ModelAttribute Team team, Model model, UserTeamProject userTeamProject) {
-        teamRepository.save(team);
-        Team updatedTeam = teamRepository.findById(team.getTeamId()).get();
-        updatedTeam.setTeamLeaderId(userController.loggedUser.getUserId());
-        teamRepository.save(updatedTeam);
+    @PostMapping("/joinTeam")
+    public String joinTeam(@ModelAttribute Team team, Model model, UserTeamProject userTeamProject) {
+
         User updatedUser = userController.loggedUser;
-        updatedUser.setRole("Team Leader");
+        updatedUser.setRole("Developer");
         userController.userRepo.save(updatedUser);
         model.addAttribute("getLoggedUser", updatedUser);
+
         userTeamProjectRepository.save(userTeamProject);
         UserTeamProject updatedUserTeamProject = userTeamProjectRepository.findById(userTeamProject.getId()).get();
         updatedUserTeamProject.setTeam(team);
@@ -56,9 +54,35 @@ public class TeamController{
         return "unassignedPage";
     }
 
+    @PostMapping("/createTeam")
+    public String createTeam(@ModelAttribute Team team, Model model, UserTeamProject userTeamProject) {
+        teamRepository.saveAndFlush(team);
+        Team updatedTeam = teamRepository.findById(team.getTeamId()).get();
+        updatedTeam.setTeamLeaderId(userController.loggedUser.getUserId());
+        teamRepository.saveAndFlush(updatedTeam);
+        User updatedUser = userController.loggedUser;
+        updatedUser.setRole("Team Leader");
+        userController.userRepo.saveAndFlush(updatedUser);
+        model.addAttribute("getLoggedUser", updatedUser);
+        userTeamProjectRepository.saveAndFlush(userTeamProject);
+        UserTeamProject updatedUserTeamProject = userTeamProjectRepository.findById(userTeamProject.getId()).get();
+        updatedUserTeamProject.setTeam(team);
+        updatedUserTeamProject.setUser(userController.loggedUser);
+        userTeamProjectRepository.saveAndFlush(updatedUserTeamProject);
+        return "unassignedPage";
+    }
+
+    @RequestMapping(value = "/joinTeamPage")
+    public String joinTeam(Model model) {
+        model.addAttribute("teams", userTeamProjectRepository.findAll());
+        return "joinTeam";
+    }
+
     @RequestMapping(value = "/teamsInfo")
     public String getAllTeams(Model model) {
         model.addAttribute("teams", userTeamProjectRepository.findAll());
         return "teamsInfo";
     }
+
+
 }

@@ -12,20 +12,38 @@
 </head>
 <body>
 
-  <center>
-    <h2 class="heading">CREATE A TEAM</h2>
-  </center>
+    <div class="navbar">
+        <form action="/unassignedPage" class="button3">
+            <button class="btn">Home</button>
+        </form>
 
-  <form action="/createTeam" method="post">
-    <label for="teamName" style="display: block;">
-      <p class="label-txt">ENTER TEAM NAME</p>
-      <input id="teamName" name="teamName" type="text" class="input" style="color: white" required>
-      <div class="line-box">
-        <div class="line"></div>
-      </div>
-    </label>
-    <button type="submit">create</button>
-  </form>
+        <form action="/joinTeamPage" class="button3">
+            <button class="btn">Join a team</button>
+        </form>
+
+        <form action="/logout" class="button">
+            <button class="btn">LOG OUT</button>
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <center>
+        <h2 class="heading">CREATE A TEAM</h2>
+    </center>
+
+    <form action="/createTeam" method="post" class="create-form">
+        <label for="teamName" style="display: block;">
+          <p class="label-txt">ENTER TEAM NAME</p>
+          <input id="teamName" name="teamName" type="text" class="input" style="color: white" required>
+          <div class="line-box">
+            <div class="line"></div>
+          </div>
+        </label>
+        <button type="submit" class="create-button">create</button>
+    </form>
 
 </body>
 </html>

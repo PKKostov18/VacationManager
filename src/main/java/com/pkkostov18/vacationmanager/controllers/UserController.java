@@ -43,6 +43,12 @@ public class UserController {
         return "vacationRequests";
     }
 
+    @GetMapping("/unassignedPage")
+    public String unassignedPage(Model model) {
+        model.addAttribute("getLoggedUser", loggedUser);
+        return "unassignedPage";
+    }
+
     @GetMapping("/ceoPage")
     public String ceoPage(Model model) {
         model.addAttribute("getLoggedUser", loggedUser);
