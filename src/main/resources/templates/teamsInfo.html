@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Vacation Manager</title>
     <link href="css/teamsInfo.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+    <div class="navbar">
+        <form action="/ceoPage" class="button3">
+            <button class="btn">Home</button>
+        </form>
+        <form action="vacationRequests.html" class="button3">
+            <button class="btn">Vacation requests</button>
+        </form>
+        <div class="dropdown">
+            <button class="dropbtn">View Information</button>
+            <div class="dropdown-content">
+                <form action="/teamsInfo" class="button1">
+                    <button class="btn1">Teams</button>
+                </form>
+
+                <form action="/usersInfo" class="button1">
+                    <button class="btn1">Users</button>
+                </form>
+
+                <form action="/projectsInfo" class="button1">
+                    <button class="btn1">Projects</button>
+                </form>
+            </div>
+        </div>
+        <form action="/logout" class="button">
+            <button class="btn">LOG OUT</button>
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <center><h1>Teams</h1></center>
+
+    <table style="width:100%">
+        <tr>
+            <th>Team name</th>
+            <th>Project</th>
+            <th>Team leader</th>
+        </tr>
+
+        <tr th:each="team : ${teams}" class="table-items">
+            <td th:text="${team.getTeam().teamName}" style="font-size: 30px"></td>
+            <td style="font-size: 30px">No Project</td>
+            <td th:text="${team.getUser().nickname}" style="font-size: 30px"></td>
+        </tr>
+
+    </table>
 
 </body>
 </html>

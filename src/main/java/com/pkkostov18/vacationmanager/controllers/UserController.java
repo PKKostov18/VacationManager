@@ -38,16 +38,16 @@ public class UserController {
         return "register";
     }
 
-    @GetMapping("/goToUsersInfoPage")
-    public String usersInfoPage() {
-        return "usersInfo";
-    }
-
     @GetMapping("/goToVacationRequestsPage")
     public String vacationRequestsPage() {
         return "vacationRequests";
     }
 
+    @GetMapping("/ceoPage")
+    public String ceoPage(Model model) {
+        model.addAttribute("getLoggedUser", loggedUser);
+        return "ceoPage";
+    }
 
     @GetMapping("/logout")
     public String logOut() {
@@ -59,6 +59,12 @@ public class UserController {
     public String addUser(@ModelAttribute User user) {
         userRepo.save(user);
         return "index";
+    }
+
+    @RequestMapping(value = "/usersInfo")
+    public String getAllUsers(Model model) {
+        model.addAttribute("users", userRepo.findAll());
+        return "usersInfo";
     }
 
     @GetMapping(value="/login")

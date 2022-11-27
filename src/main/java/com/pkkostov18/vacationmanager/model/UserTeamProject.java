@@ -8,7 +8,7 @@ public class UserTeamProject {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
@@ -19,11 +19,11 @@ public class UserTeamProject {
     @JoinColumn(name = "project_id")
     private Project project;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -14,14 +14,11 @@ public class Team {
     @Column
     private String teamName;
     @Column
-    private int projectId;
-    @Column
     private int teamLeaderId;
 
-    public Team(int teamId, String teamName, int projectId, int teamLeaderId) {
+    public Team(int teamId, String teamName, int teamLeaderId) {
         this.teamId = teamId;
         this.teamName = teamName;
-        this.projectId = projectId;
         this.teamLeaderId = teamLeaderId;
     }
 
@@ -45,14 +42,6 @@ public class Team {
         this.teamName = teamName;
     }
 
-    public int getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
-    }
-
     public int getTeamLeaderId() {
         return teamLeaderId;
     }
@@ -66,7 +55,6 @@ public class Team {
         return "Team{" +
                 "teamId=" + teamId +
                 ", teamName='" + teamName + '\'' +
-                ", projectId=" + projectId +
                 ", teamLeaderId=" + teamLeaderId +
                 '}';
     }
