@@ -11,10 +11,10 @@ public class VacationRequest {
     @GeneratedValue
     private int id;
     @Column
-    private Date dateFrom;
+    private String dateFrom;
     @Column
-    private Date dateTo;
-    @Column
+    private String dateTo;
+    @Column(columnDefinition="DATE")
     private Date creationDate;
     @Column
     private boolean halfDayVacation;
@@ -23,7 +23,7 @@ public class VacationRequest {
     @Column
     private int userId;
 
-    public VacationRequest(int id, Date dateFrom, Date dateTo, Date creationDate, boolean halfDayVacation, boolean approved, int userId) {
+    public VacationRequest(int id, String dateFrom, String dateTo, Date creationDate, boolean halfDayVacation, boolean approved, int userId) {
         this.id = id;
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
@@ -33,7 +33,7 @@ public class VacationRequest {
         this.userId = userId;
     }
 
-    public VacationRequest(Date dateFrom, Date dateTo, Date creationDate, boolean halfDayVacation, boolean approved, int userId) {
+    public VacationRequest(String dateFrom, String dateTo, Date creationDate, boolean halfDayVacation, boolean approved, int userId) {
         this.dateFrom = dateFrom;
         this.dateTo = dateTo;
         this.creationDate = creationDate;
@@ -54,19 +54,19 @@ public class VacationRequest {
         this.id = id;
     }
 
-    public Date getDateFrom() {
+    public String getDateFrom() {
         return dateFrom;
     }
 
-    public void setDateFrom(Date dateFrom) {
+    public void setDateFrom(String dateFrom) {
         this.dateFrom = dateFrom;
     }
 
-    public Date getDateTo() {
+    public String getDateTo() {
         return dateTo;
     }
 
-    public void setDateTo(Date dateTo) {
+    public void setDateTo(String dateTo) {
         this.dateTo = dateTo;
     }
 

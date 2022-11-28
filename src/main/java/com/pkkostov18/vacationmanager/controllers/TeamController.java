@@ -37,7 +37,7 @@ public class TeamController{
     public String createTeamPage() {
         return "createTeam";
     }
-
+/*
     @PostMapping("/joinTeam")
     public String joinTeam(@ModelAttribute Team team, Model model, UserTeamProject userTeamProject) {
 
@@ -53,7 +53,7 @@ public class TeamController{
         userTeamProjectRepository.save(updatedUserTeamProject);
         return "unassignedPage";
     }
-
+*/
     @PostMapping("/createTeam")
     public String createTeam(@ModelAttribute Team team, Model model, UserTeamProject userTeamProject) {
         teamRepository.saveAndFlush(team);

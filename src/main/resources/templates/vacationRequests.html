@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <title>Vacation Manager</title>
     <link href="css/vacationRequests.css" rel="stylesheet" type="text/css">
+    <script src="js/vacationRequest.js"></script>
 </head>
 <body>
 
+    <center><h1>Vacation Request</h1></center>
 
+    <form action="/createVacationRequest" method="post">
+        <label for="dateFrom" style="display: block;">
+            <p class="label-txt">Date from</p>
+            <input id="dateFrom" name="dateFrom" type="date" class="input" style="color: white" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label for="dateTo" style="display: block;">
+            <p class="label-txt">Date to</p>
+            <input id="dateTo" name="dateTo" type="date" class="input" style="color: white" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label for="halfDayVacation" style="display: block;">
+            <p class="label-txt">Half day vacation</p>
+            <input id="halfDayVacation" name="halfDayVacation" type="checkbox" class="inline checkbox" value="false">
+            <div id="checkbox-value"></div>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <button type="submit">Make a request</button>
+    </form>
 
 </body>
 </html>
